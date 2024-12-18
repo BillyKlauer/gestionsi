@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Servicios - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #e6eaf3;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            color: #3a5a8c;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            color: #3a5a8c;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #a4b7d1;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #3a5a8c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2c4a7c;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Gestión de Servicios</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="error-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

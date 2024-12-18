@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Interno del Servidor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .error-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+        }
+        .error-code {
+            font-size: 72px;
+            color: #c53030;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: #9b2c2c;
+            margin-bottom: 20px;
+        }
+        .return-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3a5a8c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .return-link:hover {
+            background-color: #2c4a7c;
+        }
+        .error-details {
+            color: #718096;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">500</div>
+        <h1 class="error-message">Error Interno del Servidor</h1>
+        <p>Lo sentimos, ha ocurrido un error inesperado.</p>
+        <a href="/" class="return-link">Volver al Inicio</a>
+        <div class="error-details">
+            Si el problema persiste, por favor contacte con soporte.
+        </div>
+    </div>
+</body>
+</html>
